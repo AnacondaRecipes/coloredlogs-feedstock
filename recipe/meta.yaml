@@ -16,7 +16,7 @@ build:
         - coloredlogs = coloredlogs.cli:main
 
 requirements:
-    build:
+    host:
         - python
         - setuptools
         - humanfriendly >=3.2
