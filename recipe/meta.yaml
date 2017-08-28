@@ -35,6 +35,15 @@ about:
   license: MIT
   license_file: LICENSE.txt
   summary: Colored terminal output for Python's logging module
+  description: |
+      The coloredlogs package enables colored terminal output for Python's
+      logging module. The ColoredFormatter class uses ANSI escape sequences
+      to render logging messages in color. As it uses only standard colors,
+      it should work on any UNIX terminal. On Windows, Colorama is
+      automatically pulled in as a dependency to enable ANSI escape sequence
+      translation.
+  dev_url: https://github.com/xolox/python-coloredlogs
+  doc_url: https://coloredlogs.readthedocs.io/
 
 extra:
   recipe-maintainers:
