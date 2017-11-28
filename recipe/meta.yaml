@@ -1,4 +1,4 @@
-{% set version = "7.1" %}
+{% set version = "7.3.1" %}
 
 package:
     name: coloredlogs
@@ -7,7 +7,7 @@ package:
 source:
     fn: coloredlogs-{{ version }}.tar.gz
     url: https://pypi.io/packages/source/c/coloredlogs/coloredlogs-{{ version }}.tar.gz
-    sha256: 4f0f2fdb6245bd8507e4d9eafe2ef3a66536de021cf002cc426e394287bac8b9
+    sha256: 2725d12281946c459154e9bb28cd1efca257c22d2b3dfe69ae4bf9b5ef5cf57c
 
 build:
     number: 0
@@ -29,7 +29,9 @@ test:
     imports:
         - coloredlogs
     commands:
-        - coloredlogs --help  # [not osx]
+        # the coloredlogs command needs a interactive terminal on unix which
+        # may not be present in the test enviornment
+        - coloredlogs --help  # [not unix]
 
 about:
     home: https://coloredlogs.readthedocs.org
