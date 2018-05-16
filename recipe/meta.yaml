@@ -27,8 +27,9 @@ requirements:
 test:
   imports:
     - coloredlogs
-  commands:
-    - coloredlogs --help  # [not osx]
+# Probably requires a valid TERM and a pager
+#  commands:
+#    - coloredlogs --help  # [not osx]
 
 about:
   home: https://coloredlogs.readthedocs.org
