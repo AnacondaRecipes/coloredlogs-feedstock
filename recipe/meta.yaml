@@ -18,22 +18,28 @@ requirements:
   host:
     - python
     - pip
-    - humanfriendly >=4.7
+    - humanfriendly >=9.1
+    - setuptools
+    - wheel
   run:
     - python
-    - humanfriendly >=4.7
+    - humanfriendly >=9.1
     - colorama  # [win]
 
 test:
   imports:
     - coloredlogs
-# Probably requires a valid TERM and a pager
-#  commands:
-#    - coloredlogs --help  # [not osx]
+  requires:
+    - pip
+  commands:
+    - pip check
+    # Probably requires a valid TERM and a pager
+    #- coloredlogs --help  # [not osx]
 
 about:
   home: https://coloredlogs.readthedocs.org
   license: MIT
+  license_family: MIT
   license_file: LICENSE.txt
   summary: Colored terminal output for Python's logging module
   description: |
