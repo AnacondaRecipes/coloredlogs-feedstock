@@ -10,6 +10,7 @@ source:
 
 build:
   number: 0
+  skip: True  # [s390x]
   script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - coloredlogs = coloredlogs.cli:main
