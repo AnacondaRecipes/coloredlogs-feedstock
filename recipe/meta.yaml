@@ -33,8 +33,7 @@ test:
     - pip
   commands:
     - pip check
-    # Probably requires a valid TERM and a pager
-    #- coloredlogs --help  # [not osx]
+    - coloredlogs --help
 
 about:
   home: https://coloredlogs.readthedocs.io
