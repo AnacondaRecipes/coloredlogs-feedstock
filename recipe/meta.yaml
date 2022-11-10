@@ -9,8 +9,7 @@ source:
   sha256: 7c991aa71a4577af2f82600d8f8f3a89f936baeaf9b50a9c197da014e5bf16b0
 
 build:
-  number: 0
-  skip: True  # [s390x]
+  number: 1
   script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - coloredlogs = coloredlogs.cli:main
@@ -34,11 +33,10 @@ test:
     - pip
   commands:
     - pip check
-    # Probably requires a valid TERM and a pager
-    #- coloredlogs --help  # [not osx]
+    - coloredlogs --help
 
 about:
-  home: https://coloredlogs.readthedocs.org
+  home: https://coloredlogs.readthedocs.io
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
@@ -58,3 +56,6 @@ extra:
     - ocefpaf
     - andfoy
     - ccordoba12
+  skip-lints:
+    - missing_license_url
+    - missing_doc_source_url
