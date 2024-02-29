@@ -22,7 +22,6 @@ requirements:
   host:
     - python
     - pip
-    - humanfriendly >=9.1
     - setuptools
     - wheel
   run:
