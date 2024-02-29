@@ -7,18 +7,21 @@ package:
 source:
   url: https://pypi.io/packages/source/c/coloredlogs/coloredlogs-{{ version }}.tar.gz
   sha256: 7c991aa71a4577af2f82600d8f8f3a89f936baeaf9b50a9c197da014e5bf16b0
+  patches:
+    - fix-path-error-on-win.patch  # [win]
 
 build:
-  number: 1
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 2
+  script: {{ PYTHON }} -m pip install --no-deps --no-build-isolation --ignore-installed -v .
   entry_points:
     - coloredlogs = coloredlogs.cli:main
 
 requirements:
+  build:
+    - m2-patch  # [win]
   host:
     - python
     - pip
-    - humanfriendly >=9.1
     - setuptools
     - wheel
   run:
@@ -56,6 +59,3 @@ extra:
     - ocefpaf
     - andfoy
     - ccordoba12
-  skip-lints:
-    - missing_license_url
-    - missing_doc_source_url
