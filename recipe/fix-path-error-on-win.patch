@@ -1,9 +1,6 @@
 This fixes an error where the path '/' is attempted to be converted from a
 relative to absolute path on windows, resulting in a ValueError.
 
-Note that this patch stops setup.py ... bdist_wheel --universal from being
-called, so this patch may need to be reconsidered if we want this to be made a
-noarch: python package for any reason.
 Index: python-coloredlogs/setup.py
 ===================================================================
 --- python-coloredlogs.orig/setup.py
