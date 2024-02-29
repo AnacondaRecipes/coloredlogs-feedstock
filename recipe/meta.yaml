@@ -7,6 +7,8 @@ package:
 source:
   url: https://pypi.io/packages/source/c/coloredlogs/coloredlogs-{{ version }}.tar.gz
   sha256: 7c991aa71a4577af2f82600d8f8f3a89f936baeaf9b50a9c197da014e5bf16b0
+  patches:
+    - fix-path-error-on-win.patch  # [win]
 
 build:
   number: 1
@@ -15,6 +17,8 @@ build:
     - coloredlogs = coloredlogs.cli:main
 
 requirements:
+  build:
+    - m2-patch  # [win]
   host:
     - python
     - pip
