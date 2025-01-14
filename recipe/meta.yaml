@@ -9,15 +9,17 @@ source:
   sha256: 7c991aa71a4577af2f82600d8f8f3a89f936baeaf9b50a9c197da014e5bf16b0
   patches:
     - fix-path-error-on-win.patch  # [win]
+    - 0001-Replace-pipes.quote-with-shlex.quote-on-Python-3.patch
 
 build:
-  number: 2
+  number: 3
   script: {{ PYTHON }} -m pip install --no-deps --no-build-isolation --ignore-installed -v .
   entry_points:
     - coloredlogs = coloredlogs.cli:main
 
 requirements:
   build:
+    - patch     # [unix]
     - m2-patch  # [win]
   host:
     - python
